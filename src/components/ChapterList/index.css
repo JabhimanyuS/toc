@@ -1,0 +1,118 @@
+.list-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.55);
+}
+
+.chapter-list {
+    position: relative;
+}
+
+.chapter-list .percentage {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: green;
+}
+
+.chapter-list h4 {
+    text-align: center;
+    font-weight: 400;
+}
+
+.chapter-list img {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    height: 15px;
+    transition: 0.4s ease-in-out;
+}
+
+.chapter-list img.active {
+    transform: rotate(90deg)
+}
+
+.chapter-list a {
+    display: inline-block;
+    width: 100%;
+    padding: 15px 45px;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border: 1px solid #e2e2e2;
+    border-bottom: 0;
+    color: #000;
+    transition: 0.2s ease-in-out;
+}
+
+.chapter-list a:hover {
+   transform: scale(1.01)
+}
+
+.individual-lesson {
+    position: relative;
+}
+
+.individual-lesson .completion-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    border: 1px solid green;
+    border-radius: 50%;
+    font-size: 10px;
+}
+
+.individual-lesson .completion-status.complete {
+    background-color: #00c400;
+    border: none;
+}
+
+.chapter-list:last-child {
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.lesson-list {
+    padding: 15px 65px;
+    font-weight: 300;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.lessons-wrapper {
+    max-height: 0;
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+    transition: 0.4s ease-in-out;
+    overflow-y: hidden;
+}
+
+.lessons-wrapper.active {
+    max-height: 1000px;
+}
+
+@media screen and (max-width: 767px) {
+    .chapter-list a {
+        font-size: 0.8rem;
+        padding: 15px 25px;
+    }
+    .chapter-list img {
+        height: 10px;
+        left: 8px;
+    }
+    .lesson-list {
+        padding: 15px 10px;
+    }
+    .chapter-list .percentage span {
+        display: none;
+    }
+}
